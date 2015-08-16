@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3wF-Yj-AiQ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="XqN-XR-uKr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3wF-Yj-AiQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hHh-oA-BLL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uOz-fK-m3f" kind="relationship" relationship="rootViewController" id="SEx-wT-sBj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ehj-ey-cFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="670"/>
+        </scene>
+        <!--CoreMotion Items-->
+        <scene sceneID="Bpa-mu-oUW">
+            <objects>
+                <tableViewController title="CoreMotion Items" id="uOz-fK-m3f" customClass="RootTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6j5-ho-Qc3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RootTableCell" id="z7D-dO-hX8">
+                                <rect key="frame" x="0.0" y="92" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z7D-dO-hX8" id="enp-at-N1n">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uOz-fK-m3f" id="jkT-g1-Ls7"/>
+                            <outlet property="delegate" destination="uOz-fK-m3f" id="8w8-A6-PBS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CoreMotion Items" id="Efz-Bb-c78"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <segue destination="mDr-ud-gUn" kind="show" identifier="rootToUIActivity" id="vVc-U8-lmE"/>
+                        <segue destination="Fof-nt-xnr" kind="show" identifier="rootToPedometer" id="TWb-we-fap"/>
+                        <segue destination="6yg-lk-BeB" kind="show" identifier="rootToDeviceMotion" id="AcE-xm-n88"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gch-SB-W3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037" y="670"/>
+        </scene>
+        <!--Activity View Controller-->
+        <scene sceneID="zTD-jv-aOh">
+            <objects>
+                <viewController id="mDr-ud-gUn" customClass="ActivityViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lPw-ak-PqD"/>
+                        <viewControllerLayoutGuide type="bottom" id="XzO-el-pxP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e6O-n1-tCL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current UIActivity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrQ-vh-mi4">
+                                <rect key="frame" x="20" y="108" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not currently reading updates." lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99Z-k2-kiA">
+                                <rect key="frame" x="20" y="148" width="374" height="341"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AY-sD-2WI">
+                                <rect key="frame" x="67" y="628" width="108" height="43"/>
+                                <state key="normal" title="Start UIAM"/>
+                                <connections>
+                                    <action selector="startActivityManager:" destination="mDr-ud-gUn" eventType="touchUpInside" id="lWA-ba-b64"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vph-ql-Uvf">
+                                <rect key="frame" x="240" y="628" width="108" height="43"/>
+                                <state key="normal" title="Stop UIAM"/>
+                                <connections>
+                                    <action selector="stopActivityManager:" destination="mDr-ud-gUn" eventType="touchUpInside" id="mav-ji-EWg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="activityLabel" destination="99Z-k2-kiA" id="7um-42-pvN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uet-wd-VcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621" y="1353"/>
+        </scene>
+        <!--Pedometer View Controller-->
+        <scene sceneID="LmI-Sb-ZXT">
+            <objects>
+                <viewController id="Fof-nt-xnr" customClass="PedometerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uNm-rl-tsZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="nPB-Y6-rLR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bb1-Wy-hhh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pedometer Data:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEW-9a-VrV">
+                                <rect key="frame" x="20" y="108" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not currently reading updates." lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIb-7f-WvN">
+                                <rect key="frame" x="20" y="148" width="374" height="341"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-V2-yC3">
+                                <rect key="frame" x="36" y="661" width="144" height="30"/>
+                                <state key="normal" title="Start Pedometer"/>
+                                <connections>
+                                    <action selector="startPedometer:" destination="Fof-nt-xnr" eventType="touchUpInside" id="gN4-na-Q5L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENP-Gw-AUb">
+                                <rect key="frame" x="225" y="661" width="144" height="30"/>
+                                <state key="normal" title="Stop Pedometer"/>
+                                <connections>
+                                    <action selector="stopPedometer:" destination="Fof-nt-xnr" eventType="touchUpInside" id="XZ1-AA-2QV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="pedometerLabel" destination="oIb-7f-WvN" id="jI4-XV-xA0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bs-cu-luf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550" y="700"/>
+        </scene>
+        <!--Device Motion View Controller-->
+        <scene sceneID="qXI-gJ-VO4">
+            <objects>
+                <viewController id="6yg-lk-BeB" customClass="DeviceMotionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ISs-aM-n0a"/>
+                        <viewControllerLayoutGuide type="bottom" id="ccK-mI-lZe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pzv-uh-1SI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Device Motion Data:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-ft-pNx">
+                                <rect key="frame" x="20" y="108" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not currently reading updates." lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urh-na-chm">
+                                <rect key="frame" x="20" y="148" width="374" height="341"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2I-jA-zfT">
+                                <rect key="frame" x="36" y="661" width="144" height="30"/>
+                                <state key="normal" title="Start Device Motion"/>
+                                <connections>
+                                    <action selector="startDeviceMotion:" destination="6yg-lk-BeB" eventType="touchUpInside" id="YqN-n3-wAa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GnP-Q5-aSL">
+                                <rect key="frame" x="225" y="661" width="144" height="30"/>
+                                <state key="normal" title="Stop Device Motion"/>
+                                <connections>
+                                    <action selector="stopDeviceMotion:" destination="6yg-lk-BeB" eventType="touchUpInside" id="cuH-X7-jIP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="deviceMotionLabel" destination="urh-na-chm" id="qi8-CF-4rn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x58-iA-vQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2025" y="214"/>
+        </scene>
+    </scenes>
+</document>
